@@ -9,6 +9,9 @@ class HomeController < UIViewController
       button = view.viewWithTag 1
       @label = view.viewWithTag 2
       button.addTarget(self, action:'buttonTapped:', forControlEvents:UIControlEventTouchUpInside)
-      
+    end
+
+    def buttonTapped(sender)
+      @label.text = "learning & doing."
     end
 end

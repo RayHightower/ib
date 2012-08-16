@@ -14,6 +14,15 @@ class HomeController < UIViewController
 
     def buttonTapped(sender)
       puts "\n\nThe button has been tapped.\n" # console message
-      @label.text = "learning & doing."
+      if toggle == 1
+        @label.text = "learning & doing."
+      else 
+        @label.text = "building apps."
+      end
+    end
+
+    def toggle
+      return @toggle = 1 if !@toggle || @toggle == 0
+      return @toggle = 0 if @toggle == 1
     end
 end

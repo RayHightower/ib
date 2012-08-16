@@ -9,13 +9,14 @@ class HomeController < UIViewController
       puts "\n\nEntering vieDidLoad in HomeController\n"
       button = view.viewWithTag 1
       @label = view.viewWithTag 2
+      @original_text = @label.text
       button.addTarget(self, action:'buttonTapped:', forControlEvents:UIControlEventTouchUpInside)
     end
 
     def buttonTapped(sender)
       puts "\n\nThe button has been tapped.\n" # console message
       if toggle == 1
-        @label.text = "learning & doing."
+        @label.text = @original_text
       else 
         @label.text = "building apps."
       end
